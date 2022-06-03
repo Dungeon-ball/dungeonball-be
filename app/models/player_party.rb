@@ -1,3 +1,0 @@
-class PlayerParty < ApplicationRecord
-
-end
