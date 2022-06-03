@@ -1,0 +1,3 @@
+class PlayerParty < ApplicationRecord
+
+end
