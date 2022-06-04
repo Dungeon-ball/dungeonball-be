@@ -273,6 +273,13 @@
           null
         ]
       },
+      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/omniauth.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
@@ -352,8 +359,55 @@
           1,
           null
         ]
+      },
+      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/services/twitter_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/services/twitter_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1654313397
+    "timestamp": 1654386985
   }
 }
