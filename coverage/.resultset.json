@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/models/party_player_spec.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/spec/models/party_player_spec.rb": {
         "lines": [
           1,
           null,
@@ -13,7 +13,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/rails_helper.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -88,7 +88,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/environment.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -97,7 +97,7 @@
           1
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/application.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/application.rb": {
         "lines": [
           1,
           null,
@@ -136,7 +136,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/boot.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -144,7 +144,7 @@
           1
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/environments/test.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -194,7 +194,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/application_controller_renderer.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -206,7 +206,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/backtrace_silencers.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -217,7 +217,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/cors.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -237,7 +237,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/filter_parameter_logging.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -245,7 +245,7 @@
           1
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/inflections.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -265,7 +265,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/mime_types.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -273,14 +273,14 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/omniauth.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/omniauth.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/initializers/wrap_parameters.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -298,14 +298,14 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/config/routes.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/config/routes.rb": {
         "lines": [
           1,
           null,
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/models/party_player.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/app/models/party_player.rb": {
         "lines": [
           1,
           1,
@@ -313,14 +313,14 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/models/application_record.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/models/party_spec.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/spec/models/party_spec.rb": {
         "lines": [
           1,
           null,
@@ -332,7 +332,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/models/party.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -340,7 +340,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/models/player_spec.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/spec/models/player_spec.rb": {
         "lines": [
           1,
           null,
@@ -352,7 +352,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/models/player.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/app/models/player.rb": {
         "lines": [
           1,
           1,
@@ -360,16 +360,15 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/spec/services/twitter_service_spec.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/spec/services/twitter_service_spec.rb": {
         "lines": [
           1,
           null,
           1,
           null,
           1,
-          null,
-          null,
-          null,
+          1,
+          1,
           null,
           null,
           null,
@@ -379,13 +378,13 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod/proj/dungeonball/dungeonball/app/services/twitter_service.rb": {
+      "/Users/bgann21/Turing/3module/projects/dungeonball-be/app/services/twitter_service.rb": {
         "lines": [
           1,
           null,
@@ -394,11 +393,8 @@
           1,
           null,
           1,
-          0,
           null,
           null,
-          1,
-          1,
           1,
           1,
           1,
@@ -408,6 +404,6 @@
         ]
       }
     },
-    "timestamp": 1654386985
+    "timestamp": 1654395009
   }
 }
