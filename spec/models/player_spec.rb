@@ -30,6 +30,10 @@ RSpec.describe Player do
       )
     end
 
+    it 'returns age / 3 for wisdom' do
+      expect(@player.wisdom).to eq(@player.age / 3)
+    end
+
     it 'uses ".to_dnd" for dnd_Strength, Constitution, and Intelligence' do
       expect(@player.dnd_strength).to eq Player.to_dnd(76)
       expect(@player.constitution).to eq Player.to_dnd(88)
