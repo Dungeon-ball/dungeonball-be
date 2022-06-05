@@ -30,8 +30,8 @@ RSpec.describe Player do
       )
     end
 
-    it 'uses ".to_dnd" for Strength, Constitution, and Intelligence' do
-      expect(@player.strength).to eq Player.to_dnd(76)
+    it 'uses ".to_dnd" for dnd_Strength, Constitution, and Intelligence' do
+      expect(@player.dnd_strength).to eq Player.to_dnd(76)
       expect(@player.constitution).to eq Player.to_dnd(88)
       expect(@player.intelligence).to eq Player.to_dnd(70)
     end
@@ -39,7 +39,7 @@ RSpec.describe Player do
     it 'uses ".to_dnd" on the average of speed, accel, and agility for Dexterity' do
       avg = (@player.agility + @player.speed + @player.acceleration) / 3
 
-      expect(@player.agility).to eq Player.to_dnd(avg)
+      expect(@player.dexterity).to eq Player.to_dnd(avg)
     end
   end
 end
