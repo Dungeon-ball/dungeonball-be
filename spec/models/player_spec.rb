@@ -13,6 +13,11 @@ RSpec.describe Player do
       expect(Player.to_dnd(95)).to eq 19
       expect(Player.to_dnd(99)).to eq 20
     end
+
+    it '.to_dnd(num) just returns 8 if the number is less than 41' do
+      expect(Player.to_dnd(40)).to eq 8
+      expect(Player.to_dnd(2)).to eq 8
+    end
   end
 
   describe 'instance methods' do
