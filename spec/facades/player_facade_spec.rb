@@ -18,5 +18,12 @@ RSpec.describe PlayerFacade do
       expect(result).to be_a Integer
       expect(result).to eq 1183
     end
+
+    it '.class_info(name) creates a DndClass object' do
+      result = PlayerFacade.class_info('Monk')
+
+      expect(result).to be_a DndClass
+      expect(result.name).to eq 'Monk'
+    end
   end
 end
