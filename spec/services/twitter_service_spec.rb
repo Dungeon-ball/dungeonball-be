@@ -9,11 +9,11 @@ RSpec.describe "Twitter service" do
           headers: {
        	 'Accept'=>'*/*',
        	 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	 'Api-Key'=>'eeiknEim9Sd3gO6imaYAr7To2',
-       	  'Api-Secret'=>'Q1drHlM5MxBMj3ny77QsgsrHqOGvOkgYBGFuMqbuoOCWxz5PUd',
+         'Authorization'=>ENV['twitter_api_bearer_token'],
        	 'User-Agent'=>'Faraday v2.3.0'
           }).
         to_return(status: 200, body: response_body, headers: {})
+        
     response = TwitterService.get_recent_tweets("von miller")
     expect(response).to be_a(Integer)
   end
