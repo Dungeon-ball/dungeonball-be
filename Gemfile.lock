@@ -66,6 +66,13 @@ GEM
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.10.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     faraday (2.3.0)
       faraday-net_http (~> 2.0)
       ruby2_keywords (>= 0.0.4)
@@ -96,8 +103,6 @@ GEM
     msgpack (1.5.2)
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.10)
     omniauth (2.1.0)
@@ -205,14 +210,14 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  arm64-darwin-20
   arm64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara
+  factory_bot_rails
+  faker
   faraday
   figaro
   listen (>= 3.0.5, < 3.2)

@@ -12,7 +12,7 @@ class Player < ApplicationRecord
 
   def constitution
     self.class.to_dnd(toughness)
-  end 
+  end
 
   def intelligence
     self.class.to_dnd(awareness)
@@ -21,6 +21,28 @@ class Player < ApplicationRecord
   def dexterity
     avg = (agility + speed + acceleration) / 3
     self.class.to_dnd(avg)
+  end
+
+  def dnd_class
+    if position == 'QB'
+      'Wizard'
+    elsif position == 'MLB'
+      'Cleric'
+    elsif ['K', 'P'].include?(position)
+      'Ranger'
+    elsif ['HB', 'FB'].include?(position)
+      'Sorcerer'
+    elsif ['LG', 'RG'].include?(position)
+      'Barbarian'
+    elsif ['ROLB', 'LOLB'].include?(position)
+      'Paladin'
+    elsif ['LT', 'C', 'RT'].include?(position)
+      'Fighter'
+    elsif ['DT', 'CB', 'SS', 'FS'].include?(position)
+      'Rogue'
+    else
+      'Monk'
+    end
   end
 
   def self.to_dnd(num)
