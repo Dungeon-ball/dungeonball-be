@@ -20,6 +20,16 @@ RSpec.describe PlayerFacade do
     end
 
     it '.class_info(name) creates a DndClass object' do
+      monk_response = File.read('spec/fixtures/dnd_monk_response.json')
+      stub_request(:get, "https://www.dnd5eapi.co/classes/Monk").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.3.0'
+           }).
+         to_return(status: 200, body: monk_response, headers: {})
+      
       result = PlayerFacade.class_info('Monk')
 
       expect(result).to be_a DndClass
