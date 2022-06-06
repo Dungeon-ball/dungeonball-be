@@ -21,7 +21,7 @@ RSpec.describe DndService do
       expect(result[:name]).to be_a String
 
       expect(result).to have_key :hit_die
-      expect(result[:hit_die]).to eq 8
+      expect(result[:hit_die]).to be_an Integer
 
       expect(result).to have_key :proficiencies
       expect(result[:proficiencies]).to be_an Array
