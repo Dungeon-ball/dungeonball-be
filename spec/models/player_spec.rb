@@ -50,5 +50,76 @@ RSpec.describe Player do
 
       expect(@player.dexterity).to eq Player.to_dnd(avg)
     end
+
+    describe 'using .dnd_class' do
+      it 'QB are Wizards' do
+        player = create(:player, position: 'QB')
+        expect(player.dnd_class).to eq 'Wizard'
+      end
+
+      it 'MLB are Clerics' do
+        player = create(:player, position: 'MLB')
+        expect(player.dnd_class).to eq 'Cleric'
+      end
+
+      it 'K and P are Rangers' do
+        player1 = create(:player, position: 'K')
+        player2 = create(:player, position: 'P')
+        expect(player1.dnd_class).to eq 'Ranger'
+        expect(player2.dnd_class).to eq 'Ranger'
+      end
+
+      it 'HB and FB are Sorcerers' do
+        player1 = create(:player, position: 'HB')
+        player2 = create(:player, position: 'FB')
+        expect(player1.dnd_class).to eq 'Sorcerer'
+        expect(player2.dnd_class).to eq 'Sorcerer'
+      end
+
+      it 'LG and RG are Barbarians' do
+        player1 = create(:player, position: 'LG')
+        player2 = create(:player, position: 'RG')
+        expect(player1.dnd_class).to eq 'Barbarian'
+        expect(player2.dnd_class).to eq 'Barbarian'
+      end
+
+      it 'ROLB and LOLB are Paladins' do
+        player1 = create(:player, position: 'ROLB')
+        player2 = create(:player, position: 'LOLB')
+        expect(player1.dnd_class).to eq 'Paladin'
+        expect(player2.dnd_class).to eq 'Paladin'
+      end
+
+      it 'LT, C, and RT are Fighters' do
+        player1 = create(:player, position: 'LT')
+        player2 = create(:player, position: 'C')
+        player3 = create(:player, position: 'RT')
+        expect(player1.dnd_class).to eq 'Fighter'
+        expect(player2.dnd_class).to eq 'Fighter'
+        expect(player3.dnd_class).to eq 'Fighter'
+      end
+
+      it 'DT, CB, SS, and FS are Rogue' do
+        player1 = create(:player, position: 'DT')
+        player2 = create(:player, position: 'CB')
+        player3 = create(:player, position: 'SS')
+        player4 = create(:player, position: 'FS')
+        expect(player1.dnd_class).to eq 'Rogue'
+        expect(player2.dnd_class).to eq 'Rogue'
+        expect(player3.dnd_class).to eq 'Rogue'
+        expect(player4.dnd_class).to eq 'Rogue'
+      end
+
+      it 'WR, TE, LE, RE are Monks' do
+        player1 = create(:player, position: 'WR')
+        player2 = create(:player, position: 'TE')
+        player3 = create(:player, position: 'LE')
+        player4 = create(:player, position: 'RE')
+        expect(player1.dnd_class).to eq 'Monk'
+        expect(player2.dnd_class).to eq 'Monk'
+        expect(player3.dnd_class).to eq 'Monk'
+        expect(player4.dnd_class).to eq 'Monk'
+      end
+    end
   end
 end
