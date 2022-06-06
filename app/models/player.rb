@@ -31,7 +31,6 @@ class Player < ApplicationRecord
       value = 9
       (41..99).each_slice(5) do |range|
         return value if range.include? num.to_i
-
         value += 1
       end
 
