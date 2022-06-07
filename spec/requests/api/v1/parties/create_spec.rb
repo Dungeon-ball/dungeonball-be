@@ -8,7 +8,7 @@ RSpec.describe 'party creation endpoint' do
   end
 
   context 'database actions' do
-    it 'creates a user_party if one does not exist' do
+    it 'adds player to the existing party or creates a new party with player' do
       player1 = create(:player)
       player2 = create(:player)
       player3 = create(:player)
@@ -18,13 +18,12 @@ RSpec.describe 'party creation endpoint' do
       post "/api/v1/party/players?player_id=#{player1.id}&user_id=5"
       # Now that our user has a party, we expect to be able to find it
       expect(Party.where(user_id: 5).length).to eq(1)
-      party1 = Party.where(user_id: 5.first)
+      party1 = Party.where(user_id: 5).first
       post "/api/v1/party/players?player_id=#{player2.id}&user_id=5"
       # The party already exists, so after this request we expect 2 party player objects and 1 party object
       expect(Party.where(user_id: 5).length).to eq(1)
-      expect(PartyPlayer.where(party_id: party.id))
       post "/api/v1/party/players?player_id=#{player3.id}&user_id=4"
-      party2 = Party.where(user_id: 4.first)
+      party2 = Party.where(user_id: 4).first
       expect(Party.where(user_id: 4).length).to eq 1
       expect(Party.where(user_id: 5).length).to eq 1
       expect(PartyPlayer.where(party_id: party1.id).length).to eq 2
@@ -61,7 +60,7 @@ RSpec.describe 'party creation endpoint' do
       player2 = create(:player)
       player3 = create(:player)
       party = Party.create!(user_id: 5, name: "test name")
-      post ("/api/v1/party/players?player_id=#{player1.id}&user_id=1",)
+      post ("/api/v1/party/players?player_id=#{player1.id}&user_id=1")
     end
   end
 
