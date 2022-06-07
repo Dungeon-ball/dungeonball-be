@@ -18,7 +18,7 @@ class PlayerFacade
       info = {}
       info[:player] = player
       info[:recent_tweets] = recent_tweet_count(player.name)
-      sleep 0.5
+      sleep 0.25
       info[:class] = class_info(player.dnd_class)
       players << info
     end
