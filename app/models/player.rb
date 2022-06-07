@@ -49,6 +49,9 @@ class Player < ApplicationRecord
     if num < 41
       return 8
 
+    elsif num > 99
+      return 20
+
     else
       value = 9
       (41..99).each_slice(5) do |range|
