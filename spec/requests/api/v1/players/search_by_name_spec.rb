@@ -3,12 +3,54 @@ require 'rails_helper'
 RSpec.describe 'Searching for a player by name' do
   context 'when a record is found' do
     it 'returns JSON of all matching players, with attributes' do
-      create(:player, name: 'Timmy Jones')
-      create(:player, name: 'Jones Timmy')
-      create(:player, name: 'dlkfaetimmywojnefo')
+      create(:player, name: 'Timmy Jones', position: 'WR')
+      create(:player, name: 'Jones Timmy', position: 'WR')
+      create(:player, name: 'dlkfaetimmywojnefo', position: 'WR')
       unmatched_player = create(:player, name: 'Bruh')
 
-      get '/api/v1/players?query=timmy'
+      # stubbing the Twitter api responses
+      response_body = File.read("spec/fixtures/recent_tweets.json")
+      stub_request(:get, "https://api.twitter.com/2/tweets/counts/recent?query=Timmy%20Jones").
+        with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'User-Agent'=>'Faraday v2.3.0'
+          }).
+          to_return(status: 200, body: response_body, headers: {})
+
+      stub_request(:get, "https://api.twitter.com/2/tweets/counts/recent?query=Jones%20Timmy").
+        with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'User-Agent'=>'Faraday v2.3.0'
+          }).
+          to_return(status: 200, body: response_body, headers: {})
+
+      stub_request(:get, "https://api.twitter.com/2/tweets/counts/recent?query=dlkfaetimmywojnefo").
+        with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'User-Agent'=>'Faraday v2.3.0'
+          }).
+          to_return(status: 200, body: response_body, headers: {})
+      # stubbing the DnD api response
+      monk_response = File.read('spec/fixtures/dnd_monk_response.json')
+      stub_request(:get, "https://www.dnd5eapi.co/api/classes/monk").
+         with(
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.3.0'
+           }).
+         to_return(status: 200, body: monk_response, headers: {})
+
+      get '/api/v1/players?name=timmy'
       full_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
