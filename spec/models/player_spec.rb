@@ -18,6 +18,11 @@ RSpec.describe Player do
       expect(Player.to_dnd(40)).to eq 8
       expect(Player.to_dnd(2)).to eq 8
     end
+
+    it '.to_dnd(num) just returns 20 if num is greater than 99' do
+      expect(Player.to_dnd(100)).to eq 20
+      expect(Player.to_dnd(5000)).to eq 20
+    end
   end
 
   describe 'instance methods' do
