@@ -117,4 +117,15 @@ RSpec.describe 'Searching for a player by name' do
       end
     end 
   end
+
+  context 'when 300 or more records are found' do
+    it 'returns an error' do
+      create_list(:player, 300, name: 'timmy')
+
+      get '/api/v1/players', params: {name: 'timmy'}
+
+      expect(response).to_not be_successful
+      expect(response.body).to match 'too many matches. Please make your query more specific.'
+    end
+  end
 end

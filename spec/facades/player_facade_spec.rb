@@ -36,6 +36,14 @@ RSpec.describe PlayerFacade do
       expect(result.name).to eq 'Monk'
     end
 
+    it '.find_by_name(name) will not attempt to hit the twitter api if >= 300 results are found' do
+      create_list(:player, 300, name: 'timmy')
+
+      result = PlayerFacade.find_by_name('timmy')
+
+      expect(result).to be_falsey
+    end
+
     it '.find_by_name(name) returns all matching players with charisma and class calculated' do
       create(:player, name: 'Timmy Jones', position: 'WR')
       create(:player, name: 'Jones Timmy', position: 'WR')

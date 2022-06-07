@@ -13,14 +13,18 @@ class PlayerFacade
   def self.find_by_name(name)
     found_players = Player.where("name ILIKE '%#{name}%'")
 
-    players = []
-    found_players.each do |player|
-      info = {}
-      info[:player] = player
-      info[:recent_tweets] = recent_tweet_count(player.name)
-      info[:class] = class_info(player.dnd_class)
-      players << info
+    if found_players.count >= 300
+      return false
+    else
+      players = []
+      found_players.each do |player|
+        info = {}
+        info[:player] = player
+        info[:recent_tweets] = recent_tweet_count(player.name)
+        info[:class] = class_info(player.dnd_class)
+        players << info
+      end
+      players
     end
-    players
   end
 end
