@@ -9,7 +9,7 @@ RSpec.describe PlayerFacade do
           headers: {
             'Accept'=>'*/*',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'Authorization'=>"Bearer #{ENV['twitter_api_bearer_token']}",
             'User-Agent'=>'Faraday v2.3.0'
           }).
           to_return(status: 200, body: response_body, headers: {})
@@ -49,7 +49,7 @@ RSpec.describe PlayerFacade do
           headers: {
             'Accept'=>'*/*',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'Authorization'=>"Bearer #{ENV['twitter_api_bearer_token']}",
             'User-Agent'=>'Faraday v2.3.0'
           }).
           to_return(status: 200, body: response_body, headers: {})
@@ -59,7 +59,7 @@ RSpec.describe PlayerFacade do
           headers: {
             'Accept'=>'*/*',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'Authorization'=>"Bearer #{ENV['twitter_api_bearer_token']}",
             'User-Agent'=>'Faraday v2.3.0'
           }).
           to_return(status: 200, body: response_body, headers: {})
@@ -69,7 +69,7 @@ RSpec.describe PlayerFacade do
           headers: {
             'Accept'=>'*/*',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'Authorization'=>ENV['twitter_api_bearer_token'],
+            'Authorization'=>"Bearer #{ENV['twitter_api_bearer_token']}",
             'User-Agent'=>'Faraday v2.3.0'
           }).
           to_return(status: 200, body: response_body, headers: {})
