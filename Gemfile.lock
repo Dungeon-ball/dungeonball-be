@@ -71,7 +71,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faker (2.21.0)
+    faker (2.20.0)
       i18n (>= 1.8.11, < 2)
     faraday (2.3.0)
       faraday-net_http (~> 2.0)
@@ -210,7 +210,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  arm64-darwin-21
+  arm64-darwin-20
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -238,4 +238,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.8
+   2.3.14
