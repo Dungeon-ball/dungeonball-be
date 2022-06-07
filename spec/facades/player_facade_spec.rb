@@ -21,7 +21,7 @@ RSpec.describe PlayerFacade do
 
     it '.class_info(name) creates a DndClass object' do
       monk_response = File.read('spec/fixtures/dnd_monk_response.json')
-      stub_request(:get, "https://www.dnd5eapi.co/classes/Monk").
+      stub_request(:get, "https://www.dnd5eapi.co/api/classes/monk").
          with(
            headers: {
           'Accept'=>'*/*',

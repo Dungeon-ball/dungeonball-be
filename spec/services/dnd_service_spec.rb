@@ -4,7 +4,7 @@ RSpec.describe DndService do
   context 'class methods' do
     it '.get_class_data returns class info as JSON' do
       monk_response = File.read('spec/fixtures/dnd_monk_response.json')
-      stub_request(:get, "https://www.dnd5eapi.co/classes/Monk").
+      stub_request(:get, "https://www.dnd5eapi.co/api/classes/monk").
          with(
            headers: {
           'Accept'=>'*/*',
