@@ -5,7 +5,8 @@ class PlayerFacade
 
   def self.class_info(name)
     raw_data = DndService.get_class_data(name)
+    class_description = File.read("db/docs/#{name.downcase}_description.txt")
 
-    DndClass.new(raw_data)
+    DndClass.new(raw_data, class_description)
   end
 end

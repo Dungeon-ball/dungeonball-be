@@ -4,15 +4,16 @@ RSpec.describe DndClass do
   it 'can be initialized with JSON from the dnd api' do
     response = File.read('spec/fixtures/dnd_monk_response.json')
     json = JSON.parse(response, symbolize_names: true)
-
-    result = DndClass.new(json)
+    description = File.read('db/docs/monk_description.txt')
+    result = DndClass.new(json, description)
 
     expect(result).to be_a DndClass
 
     expect(result.name).to eq('Monk')
+    expect(result.description).to eq(description)
     expect(result.hitpoints).to be 8
 
-    expect(result.proficiencies).to be_a Array
+    expect(result.proficiencies).to be_an Array
     expect(result.proficiencies).to be_all String
     expect(result.proficiencies.count).to eq 4
 

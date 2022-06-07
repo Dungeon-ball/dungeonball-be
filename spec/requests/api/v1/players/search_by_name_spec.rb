@@ -63,6 +63,9 @@ RSpec.describe 'Searching for a player by name' do
         expect(dnd_class).to have_key :name
         expect(dnd_class[:name]).to be_a String
 
+        expect(dnd_class).to have_key :description
+        expect(dnd_class[:description]).to be_a String
+
         expect(dnd_class).to have_key :hitpoints
         expect(dnd_class[:hitpoints]).to be_an Integer
 

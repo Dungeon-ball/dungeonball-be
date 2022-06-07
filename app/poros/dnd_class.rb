@@ -1,10 +1,11 @@
 class DndClass
-  attr_reader :name, :hitpoints, :proficiencies
+  attr_reader :name, :hitpoints, :proficiencies, :description
 
-  def initialize(data)
+  def initialize(data, description)
     @name = data[:name]
     @hitpoints = data[:hit_die]
     @proficiencies = grab_proficiencies(data)
+    @description = description
   end
 
   def grab_proficiencies(data)
