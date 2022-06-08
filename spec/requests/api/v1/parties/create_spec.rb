@@ -3,8 +3,31 @@ require 'rails_helper'
 RSpec.describe 'party creation endpoint' do
 
   context 'request validations' do
-    xit 'requires a valid request to have...'
-    xit 'refuses a request that has/lacks...'
+    it 'requires a valid request to have a valid player_id format and number' do
+      # player_id missing
+      post "/api/v1/party/players?user_id=5"
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:error]).to eq("a valid player_id parameter is required for this request")
+
+      # player_id provided is not an ID
+      post "/api/v1/party/players?player_id=foobar&user_id=5"
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:error]).to eq("player_id does not match the expected format")
+
+      # player_id provided not found in database
+      player = create(:player)
+      Player.destroy(player.id)
+      post "/api/v1/party/players?player_id=#{player.id}&user_id=5"
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:error]).to eq("player_id provided was not found")
+    end
+
+    it 'refuses a request that lacks a user_id' do
+      player = create(:player)
+      post "/api/v1/party/players?player_id=#{player.id}"
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:error]).to eq("user must be logged in to use this endpoint")
+    end
   end
 
   context 'database actions' do
@@ -61,16 +84,15 @@ RSpec.describe 'party creation endpoint' do
       player3 = create(:player)
       party = Party.create!(user_id: 5, name: "test name")
       post ("/api/v1/party/players?player_id=#{player1.id}&user_id=1")
-      response_body = JSON.parse(response.body)
-    binding.pry
+      response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response_body.class).to eq Hash
       expect(response_body[:data].class).to eq Hash
-      expect(response_body[:data].keys.include?(:id))to eq true
-      expect(response_body[:data].keys.include?(:type))to eq true
+      expect(response_body[:data].keys.include?(:id)).to eq true
+      expect(response_body[:data].keys.include?(:type)).to eq true
       expect(response_body[:data][:attributes].keys.include?(:name)).to eq true
       expect(response_body[:data][:attributes][:relationships].keys.include?(:players)).to eq true
       expect(response_body[:data][:attributes][:relationships][:players][:data].class).to eq Array
-      unless response_body[:data][:attributes][:relationships][:players][:data].length = 0
+      unless response_body[:data][:attributes][:relationships][:players][:data].length == 0
         expect(response_body[:data][:attributes][:relationships][:players][:data].first.class).to eq Hash
         expect(response_body[:data][:attributes][:relationships][:players][:data].last.class).to eq Hash
         expect(response_body[:data][:attributes][:relationships][:players][:data].first[:type]).to eq "player"
