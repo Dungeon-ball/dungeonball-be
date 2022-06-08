@@ -7,7 +7,8 @@ class Api::V1::Party::PlayersController < ApplicationController
     # Request Validations
     if !params.keys.include?("player_id")
       render json: { "error": "a valid player_id parameter is required for this request"}, status: 400
-    elsif (params["player_id"] =~ /\d+/) == nil
+    elsif (params["player_id"] =~ /\A\d+\Z/) == nil
+      # Regex tests that "player_id" matches a string of numerals from start to end, and nothing else
       render json: { "error": "player_id does not match the expected format"}, status: 400
     elsif !Player.exists?(params["player_id"])
       render json: { "error": "player_id provided was not found"}, status: 400
