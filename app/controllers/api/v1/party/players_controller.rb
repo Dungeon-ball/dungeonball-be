@@ -3,7 +3,6 @@ class Api::V1::Party::PlayersController < ApplicationController
   before_action :logged_in?, :validate_fe
 
   def create
-    # binding.pry
     # Request Validations
     if !params.keys.include?("player_id")
       render json: { "error": "a valid player_id parameter is required for this request"}, status: 400
