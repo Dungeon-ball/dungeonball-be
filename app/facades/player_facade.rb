@@ -10,6 +10,18 @@ class PlayerFacade
     DndClass.new(raw_data, class_description)
   end
 
+  def self.find_by_id(player_id)
+
+    player = Player.where(id: player_id).first
+    if player
+      info = {}
+      info[:player] = player
+      info[:recent_tweets] = recent_tweet_count(player.name)
+      info[:class] = class_info(player.dnd_class)
+    end
+    info
+  end
+
   def self.find_by_name(name)
     found_players = Player.where("name ILIKE '%#{name}%'")
 
