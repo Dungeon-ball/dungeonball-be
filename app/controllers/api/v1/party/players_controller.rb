@@ -1,6 +1,6 @@
 class Api::V1::Party::PlayersController < ApplicationController
 
-  before_action :logged_in?
+  before_action :logged_in?, :validate_fe
 
   def create
     # binding.pry
