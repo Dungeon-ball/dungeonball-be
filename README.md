@@ -5,7 +5,7 @@ An API for retrieving the theoretical D&D statistics of your favorite NFL player
 This API requires Ruby version 2.7.4 or later.
 
 ### Schema
-![DB Schema](https://github.com/Dungeon-ball/dungeonball-be/blob/zel-readme-update/db/DB%20Schema.png "DB Schema")
+![DB Schema](https://github.com/Dungeon-ball/dungeonball-be/blob/staging/db/DB%20Schema.png "DB Schema")
 
 ### Setting Up
 To use this API for your own personal use, please follow the proceeding steps:
