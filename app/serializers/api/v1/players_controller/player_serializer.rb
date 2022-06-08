@@ -40,7 +40,6 @@ class Api::V1::PlayersController::PlayerSerializer
            constitution: player.constitution,
            intelligence: player.intelligence,
            wisdom: player.wisdom,
-
            charisma: Player.to_dnd(player_data[:recent_tweets]),
            class: {
               name: player_data[:class].name,
