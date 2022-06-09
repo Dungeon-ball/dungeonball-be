@@ -6,7 +6,7 @@ class Api::V1::Party::PlayersController::PartyPlayerSerializer
 		"id": party.id.to_s,
 		"type": "party",
 		"attributes": {
-			"name": "party.name",
+			"name": party.name,
 			"relationships": {
 				"players": {
 					"data": player_array.map do |player|
