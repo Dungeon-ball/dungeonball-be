@@ -13,7 +13,7 @@ class Api::V1::Party::PlayersController < ApplicationController
       render json: { "error": "player_id provided was not found"}, status: 400
     else
       # Database Action
-      party = Party.create!(party_params) unless party = Party.find_by(user_id: party_params[:user_id])
+      party = ::Party.create!(party_params) unless party = ::Party.find_by(user_id: party_params[:user_id])
       PartyPlayer.create!(party_player_params) unless PartyPlayer.where(party_id: party.id, player_id: params[:player_id]).length != 0
       # Responds with success even if no actions taken...?
       render json: PartyPlayerSerializer.player_party_create_response(party.players, party, params[:user_id]), status: 200
