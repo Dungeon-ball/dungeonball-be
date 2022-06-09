@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :players, only: [:index, :show]
+      get '/party', to: 'parties#show'
       namespace :party do
-        resources:players, only: [:create]
+        resources :players, only: [:create]
       end
     end
   end
