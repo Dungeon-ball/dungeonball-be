@@ -11,7 +11,7 @@ class PlayerFacade
   end
 
   def self.find_by_id(player_id)
-    player = Player.where(id: player_id).first
+    player = Player.find(player_id)
     if player
       info = {}
       info[:player] = player
