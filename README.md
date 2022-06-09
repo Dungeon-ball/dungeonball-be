@@ -90,36 +90,36 @@ Requires a query parameter ```name``` for a player's name.  This search is case-
 
 ```
 {
-	"data": {
-		"id": "16",
-		"type": "party",
-		"attributes": {
-			"name": "Awesome party",
-			"user_id": "8",
-			"relationships": {
-				"players": {
-					"data": [
-            {
-							"type": 'player',
-							"id": 10,
-							"name": 'billy'
-						},
-						{
-							"type": 'player',
-							"id": 12,
-							"name": 'billy'
-						}
-					}
-				},
-				"user": {
-					"data": {
-						"type": "user",
-						"id": 8
-					}
-				}
-			]
-		}
+ "data": {
+   "id": "16",
+   "type": "party",
+   "attributes": {
+      "name": "Awesome party",
+      "user_id": "8",
+      "relationships": {
+        "players": {
+	   "data": [
+             {
+	       "type": 'player',
+	       "id": 10,
+	       "name": 'billy'
+	     },
+	     {
+	       "type": 'player',
+	       "id": 12,
+	       "name": 'billy'
+	     }
+	   }
+	  },
+	  "user": {
+	    "data": {
+	    "type": "user",
+	    "id": 8
+	  }
 	}
+      ] 
+    }
+  }
 }
 ```
 
