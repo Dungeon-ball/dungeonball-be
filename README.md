@@ -5,7 +5,7 @@ An API for retrieving the theoretical D&D statistics of your favorite NFL player
 This API requires Ruby version 2.7.4 or later.
 
 ### Schema
-![DB Schema](https://github.com/Dungeon-ball/dungeonball-be/blob/staging/db/DB%20Schema.png "DB Schema")
+![DB Schema](https://github.com/Dungeon-ball/dungeonball-be/blob/main/db/DB%20Schema.png "DB Schema")
 
 ### Setting Up
 To use this API for your own personal use, please follow the proceeding steps:
@@ -90,34 +90,34 @@ Requires a query parameter ```name``` for a player's name.  This search is case-
 
 ```
 {
-  "data": {
-    "id": "16",
-    "type": "party",
-    "attributes": {
+ "data": {
+   "id": "16",
+   "type": "party",
+   "attributes": {
       "name": "Awesome party",
-      "user_id: "8"
-      "relationships":  [
+      "user_id": "8",
+      "relationships": {
         "players": {
-          "data": [
-            {
-              "type": 'player',
-              "id": 10,
-              "name": 'billy'
-            },
-            {
-              "type": 'player',
-              "id": 12,
-              "name": 'billy'
-            }
-          ]
-        },
-        "user" : {
-          "data": {
-            "type": "user",
-            "id": 8
-          }
-        }
-      ]
+	   "data": [
+             {
+	       "type": 'player',
+	       "id": 10,
+	       "name": 'billy'
+	     },
+	     {
+	       "type": 'player',
+	       "id": 12,
+	       "name": 'billy'
+	     }
+	   }
+	  },
+	  "user": {
+	    "data": {
+	    "type": "user",
+	    "id": 8
+	  }
+	}
+      ] 
     }
   }
 }
