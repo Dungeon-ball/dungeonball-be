@@ -13,7 +13,7 @@ RSpec.describe 'The party show endpoint' do
       get '/api/v1/party?user_id=5', headers: {be_auth_key: ENV['be_auth_key']}
 
       expect(response).to be_successful
-      full_response = JSON.parse(response.body, symbolizes_names: true)
+      full_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(full_response).to have_key :data
       expect(full_response[:data]).to be_a Hash
@@ -32,14 +32,11 @@ RSpec.describe 'The party show endpoint' do
       expect(party_info).to have_key :name
       expect(party_info[:name]).to be_a String
 
-      expect(party_info).to have_key :user_id
-      expect(party_info[:user_id]).to be_a String
-      
       expect(party_info).to have_key :relationships
-      expect(party_info[:relationships]).to be_an Array
+      expect(party_info[:relationships]).to be_a Hash
 
-      player_relationships = party_info[:relationships][0]
-      user_relationship = party_info[:relationships][1]
+      player_relationships = party_info[:relationships][:players]
+      user_relationship = party_info[:relationships][:user]
       
       expect(player_relationships).to have_key :data
       expect(player_relationships[:data]).to be_an Array
@@ -63,7 +60,7 @@ RSpec.describe 'The party show endpoint' do
       expect(user_relationship[:data][:type]).to eq 'user'
 
       expect(user_relationship[:data]).to have_key :id
-      expect(user_relationship[:data][:type]).to be_an Integer
+      expect(user_relationship[:data][:id]).to be_a String
     end
   end
 end
