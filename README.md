@@ -1,4 +1,5 @@
 # Dungeonball
+###### Alex Psitos, Brylan Gannon, Drew Proebstel, Joseph Senecal, Tyler Ross, Zel Imbriaco
 An API for retrieving the theoretical D&D statistics of your favorite NFL players, and forming parties of NFL players!
 
 ## Requirements
