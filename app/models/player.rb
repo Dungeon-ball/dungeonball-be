@@ -3,7 +3,7 @@ class Player < ApplicationRecord
   has_many :parties, through: :party_players
 
   def wisdom
-    age / 3
+    8 + (age - 18) / 2
   end
 
   def dnd_strength
